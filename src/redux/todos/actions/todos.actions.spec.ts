@@ -6,6 +6,7 @@ describe("Todo actions", () => {
     const todo = {
       id: "1",
       title: "Add todo",
+      checked: false,
     };
     const expectedAction = {
       type: ADD_TODO,

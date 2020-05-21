@@ -22,6 +22,7 @@ const AddTodo: React.FC = () => {
     const newTodo = {
       id: uuidv4(),
       title: inputValue,
+      checked: false,
     };
     dispatch(addTodo(newTodo));
     setInputValue("");

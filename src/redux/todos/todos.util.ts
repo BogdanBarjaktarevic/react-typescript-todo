@@ -1,5 +1,10 @@
-import { Todo, TodoList } from "./todos.types";
+import { Todo } from "./todos.types";
 
-export const addTodoToList = (todos: null | TodoList, todo: Todo): TodoList => {
-  return { ...todos, [todo.id]: todo };
+export const checkedTodos = (todos: Todo[], id: string): Todo[] => {
+  return todos.map((todo) => {
+    if (todo.id === id) {
+      todo.checked = !todo.checked;
+    }
+    return todo;
+  });
 };

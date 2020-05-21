@@ -2,7 +2,7 @@ import todosReducer from "./todos.reducer";
 import { addTodo } from "../actions/todos.actions";
 
 const initialState = {
-  todos: {},
+  todos: [],
 };
 
 describe("Todos reducer", () => {
@@ -10,10 +10,11 @@ describe("Todos reducer", () => {
     const mockTodo = {
       id: "1",
       title: "Add todo",
+      checked: false,
     };
 
-    expect(todosReducer(initialState, addTodo(mockTodo)).todos).toEqual({
-      "1": mockTodo,
-    });
+    expect(todosReducer(initialState, addTodo(mockTodo)).todos).toEqual([
+      mockTodo,
+    ]);
   });
 });
