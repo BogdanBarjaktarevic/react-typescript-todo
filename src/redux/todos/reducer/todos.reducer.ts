@@ -3,8 +3,9 @@ import {
   CHECK_TODO,
   TodoActionTypes,
   TodoState,
-} from "../todos.types";
-import { checkedTodos } from "./../todos.util";
+  DELETE_TODO,
+} from "../types/todos.types";
+import { checkedTodos, deletedTodos } from "../util/todos.util";
 
 const initialState: TodoState = {
   todos: [],
@@ -21,6 +22,11 @@ export default (state = initialState, action: TodoActionTypes): TodoState => {
       return {
         ...state,
         todos: checkedTodos(state.todos, action.payload),
+      };
+    case DELETE_TODO:
+      return {
+        ...state,
+        todos: deletedTodos(state.todos, action.payload),
       };
     default:
       return state;

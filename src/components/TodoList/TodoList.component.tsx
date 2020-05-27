@@ -8,7 +8,7 @@ const TodoList: React.FC = () => {
   const todos = useSelector(selectTodos);
 
   return (
-    <div data-testid="todo-list">
+    <div>
       {todos.map(({ title, id, checked }) => (
         <TodoItem key={id} title={title} checked={checked} id={id} />
       ))}

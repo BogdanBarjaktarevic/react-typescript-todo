@@ -1,5 +1,10 @@
-import { Todo, ADD_TODO, TodoActionTypes } from "../todos.types";
-import { CHECK_TODO } from "./../todos.types";
+import {
+  Todo,
+  ADD_TODO,
+  CHECK_TODO,
+  DELETE_TODO,
+  TodoActionTypes,
+} from "../types/todos.types";
 
 export const addTodo = (todo: Todo): TodoActionTypes => {
   return {
@@ -11,6 +16,13 @@ export const addTodo = (todo: Todo): TodoActionTypes => {
 export const checkTodo = (id: string): TodoActionTypes => {
   return {
     type: CHECK_TODO,
+    payload: id,
+  };
+};
+
+export const deleteTodo = (id: string): TodoActionTypes => {
+  return {
+    type: DELETE_TODO,
     payload: id,
   };
 };

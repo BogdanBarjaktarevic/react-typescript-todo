@@ -13,7 +13,7 @@ interface AddTodoAction {
   payload: Todo;
 }
 
-interface CheckTodo {
+interface CheckTodoAction {
   type: typeof CHECK_TODO;
   payload: string;
 }
@@ -27,4 +27,7 @@ export interface TodoState {
   todos: Todo[];
 }
 
-export type TodoActionTypes = AddTodoAction | CheckTodo | DeleteTodoAction;
+export type TodoActionTypes =
+  | AddTodoAction
+  | CheckTodoAction
+  | DeleteTodoAction;

@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../../redux/todos/actions/todos.actions";
 import { Dispatch } from "redux";
-import { TodoActionTypes } from "../../redux/todos/todos.types";
+import { TodoActionTypes } from "../../redux/todos/types/todos.types";
 
 const AddTodo: React.FC = () => {
   const dispatch = useDispatch<Dispatch<TodoActionTypes>>();
@@ -19,6 +19,7 @@ const AddTodo: React.FC = () => {
 
   const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
+    if (!inputValue) return;
     const newTodo = {
       id: uuidv4(),
       title: inputValue,

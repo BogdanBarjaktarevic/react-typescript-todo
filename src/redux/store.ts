@@ -3,7 +3,7 @@ import { rootReducer } from "./rootReducer";
 import thunk, { ThunkMiddleware } from "redux-thunk";
 
 import { RootState } from "./rootReducer";
-import { TodoActionTypes } from "./todos/todos.types";
+import { TodoActionTypes } from "./todos/types/todos.types";
 
 const composeEnhancers =
   (window && (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
